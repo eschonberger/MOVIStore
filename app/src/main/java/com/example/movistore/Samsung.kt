@@ -20,5 +20,16 @@ override fun juegosDisponibles(){
 
 override fun sacarFoto(){
         println("sacando una foto desde un celular samsung")
+
+    //Consume bateria al tomar la foto - El consumo es mas optimo que el del celular generico
+    this.bateria.cargaActual=this.bateria.cargaActual-1
     }
+
+override fun toString():String{
+    //Invoca el chequeo de la bateria
+    cambiarBateria()
+
+    return "El celular es un ${this.marca} modelo ${this.modelo}, posee ${this.cantidadChips} chip y tiene ${this.bateria.cargaActual}% de bateria"
+}
+
 }
