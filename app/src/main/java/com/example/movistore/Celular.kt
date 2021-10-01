@@ -6,15 +6,24 @@ open class Celular {
     var modelo: String = ""
     var cantidadChips: Int = 0
     var bateria: Bateria
+    lateinit var chips:Chip
 
 
-    constructor(marca: String, modelo: String, cantidadChips: Int, bateria: Bateria) {
+    //Con sobrecarga para los chips
+constructor(marca: String, modelo: String, cantidadChips: Int, bateria: Bateria, chip:Chip) {
         this.marca = marca
         this.modelo = modelo
         this.cantidadChips = cantidadChips
         this.bateria = bateria
-
+        this.chips = chip
     }
+
+constructor(marca: String, modelo: String, cantidadChips: Int, bateria: Bateria) {
+        this.marca = marca
+        this.modelo = modelo
+        this.cantidadChips = cantidadChips
+        this.bateria = bateria
+}
 
 
     open fun encender() {
@@ -40,10 +49,14 @@ open class Celular {
 
     }
 
-    override fun toString(): String {
+    override fun toString():String {
         //Invoca el chequeo de la bateria
         cambiarBateria()
-        return "El celular es de tipo Generico posee ${this.cantidadChips} chip y tiene ${this.bateria.cargaActual}% de bateria."
+
+        //this.chips.mostrar()
+
+        return "El celular es de tipo Generico posee ${this.cantidadChips} chip tiene ${this.bateria.cargaActual}% de bateria. El numero de Telefono es: ${this.chips.numeroTelefono}"
+
     }
 
 
