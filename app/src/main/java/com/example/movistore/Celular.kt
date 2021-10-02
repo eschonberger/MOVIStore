@@ -53,11 +53,12 @@ constructor(marca: String, modelo: String, cantidadChips: Int, bateria: Bateria)
         //Invoca el chequeo de la bateria
         cambiarBateria()
 
-        //this.chips.mostrar()
-
         return "El celular es de tipo Generico posee ${this.cantidadChips} chip tiene ${this.bateria.cargaActual}% de bateria. El numero de Telefono es: ${this.chips.numeroTelefono}"
 
     }
 
-
+    //Invoca el metodo recuperarPIN de la clase chips
+    fun obtenerPIN():Unit{
+        println(this.chips.recuperarPIN())
+    }
 }
