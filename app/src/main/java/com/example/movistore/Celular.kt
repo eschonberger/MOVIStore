@@ -8,16 +8,7 @@ open class Celular {
     var bateria: Bateria
     lateinit var chips:Chip
 
-
-    //Con sobrecarga para los chips
-constructor(marca: String, modelo: String, cantidadChips: Int, bateria: Bateria, chip:Chip) {
-        this.marca = marca
-        this.modelo = modelo
-        this.cantidadChips = cantidadChips
-        this.bateria = bateria
-        this.chips = chip
-    }
-
+//Se crea el objeto Celular sin CHIPs
 constructor(marca: String, modelo: String, cantidadChips: Int, bateria: Bateria) {
         this.marca = marca
         this.modelo = modelo
@@ -25,6 +16,14 @@ constructor(marca: String, modelo: String, cantidadChips: Int, bateria: Bateria)
         this.bateria = bateria
 }
 
+//Constructor con sobrecarga para que el celular tenga chip
+    constructor(marca: String, modelo: String, cantidadChips: Int, bateria: Bateria, chip:Chip) {
+        this.marca = marca
+        this.modelo = modelo
+        this.cantidadChips = cantidadChips
+        this.bateria = bateria
+        this.chips = chip
+    }
 
     open fun encender() {
         println("Encendiendo el Celular ${this.marca} modelo ${this.modelo}")
@@ -57,8 +56,17 @@ constructor(marca: String, modelo: String, cantidadChips: Int, bateria: Bateria)
 
     }
 
+    fun cargaBateria(){
+        return this.bateria.estadoCarga()
+    }
+
     //Invoca el metodo recuperarPIN de la clase chips
     fun obtenerPIN():Unit{
         println(this.chips.recuperarPIN())
+    }
+
+    //Invoca el metodo recuperarPuk de la clase chips
+    fun obtenerPUK():Unit{
+        println(this.chips.recuperarPUK())
     }
 }

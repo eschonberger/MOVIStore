@@ -1,12 +1,13 @@
 package com.example.movistore
 
-class Samsung():Celular(marca="",modelo="",cantidadChips = 0,Bateria("X",0,0,0)){
+class Samsung():Celular(marca="",modelo="",cantidadChips = 0,Bateria("X",0,0,0),Chip("Y",0,0,0)){
 
-constructor(marca:String,modelo:String,cantidadChips:Int,bateria: Bateria):this() {
+constructor(marca:String,modelo:String,cantidadChips:Int,bateria: Bateria,chip:Chip):this() {
 this.marca=marca
 this.modelo=modelo
 this.cantidadChips=cantidadChips
 this.bateria=bateria
+this.chips=chip
 
 }
 
@@ -15,7 +16,7 @@ this.bateria=bateria
     }
 
 override fun juegosDisponibles(){
-        println("Apa samsung, tengo el gear of wars")
+        println("Juego exclusivo de samsung -Gear of Wars-")
     }
 
 override fun sacarFoto(){
